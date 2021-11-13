@@ -1,45 +1,161 @@
 /* Globle Rules Start*/
-html{
+html {
     scroll-behavior: smooth;
 }
-*{
+
+* {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-body{
+
+body {
     font-family: "Work Sans",
-    sans-serif;
-    
+        sans-serif;
+    text-transform: capitalize;
+
 }
-.container{
-    padding-left:15px ;
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
 }
+
 /* small */
-@media(min-width:768px){
-    .container{
-        width:750px
+@media(min-width:768px) {
+    .container {
+        width: 750px
     }
 }
+
 /* medium */
-@media(min-width:992px){
+@media(min-width:992px) {
     .container {
         width: 970px
     }
 }
+
 /* large */
-@media(min-width:1200px){
+@media(min-width:1200px) {
     .container {
         width: 1170px
     }
 }
+
 /* Globle Rules End */
 /* Variable */
-:root{
-    --main-color:#10cab7;
+:root {
+    --main-color: #10cab7;
     --secondary-color: #2c4755;
+    --main-duration: 0.4s;
+    --third-color: #f6f6f6;
 }
+
 /* End Variables */
+/* Start Header */
+.header {
+    padding: 20px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header .logo img {
+
+    height: 40px;
+}
+
+.header nav {
+    position: relative;
+}
+
+.header nav .icons {
+
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+}
+
+.header nav span {
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #333;
+}
+
+.header nav span:first-child {
+    width: 100%;
+}
+
+.header nav span:nth-child(2) {
+    width: 60%;
+    transition: var(--main-duration);
+}
+
+.header nav:hover span:nth-child(2) {
+    width: 100%;
+    transition: var(--main-duration);
+}
+
+.header nav span:last-child {
+    width: 100%;
+}
+
+.header nav ul {
+    position: absolute;
+    top: calc(100% + 10px);
+    margin: 0;
+    padding: 0;
+    right: 0;
+    background-color: #f6f6ff;
+    width: 200px;
+    display: none;
+}
+
+.header nav:hover ul {
+    display: block
+}
+
+
+.header nav ul::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -20px;
+    border-color: transparent transparent #f6f6ff transparent;
+    border-style: solid;
+    border-width: 10px;
+}
+
+.header nav ul li {
+    padding: 15px;
+}
+
+.header nav li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.header nav ul li:hover a {
+    transition: var(--main-duration);
+    padding-left: 15px;
+}
+
+.header nav ul li:not(:last-child) {
+    border-bottom: 1px solid #777;
+}
+
+/* End Header */
